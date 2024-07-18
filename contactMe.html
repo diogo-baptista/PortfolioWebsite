@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact Me</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/contact-me-style.css">
+    
+</head>
+<body>
+
+    <div>
+        <img src="imgs/menu-button.png" class="img-menu" onclick="toggleMenu(); toggleImage(this)">
+        <div class="z-index-overlap">
+            <ul class="dropdown-menu" id="subMenu">
+                <li class="menu-text"><a href="index.html">Home</a><hr class="menu-separator"> </li>
+                <li class="last-menu-elem menu-text"><a href="https://github.com/diogo-baptista">Projects</a></li>               
+            </ul>
+        </div>		
+    </div>
+
+    <div id="contact-form">
+	    <div>
+	    	<h1>Contact Me</h1> 
+	    	<h4>Please fill out the form and click send.</h4> 
+	    </div>
+	    <form action="https://formspree.io/f/mzbldogl" method="post">
+	        <div>
+	           	<label for="name">
+	           		<span class="required">Name: </span> 
+	           		<input type="text" id="name" name="name" placeholder="Your Name" required="required"/>
+	           	</label> 
+	        </div>
+	        <div>
+	        	<label for="email">
+	                <span class="required">Email: </span>
+	           	    <input type="email" id="email" name="email" placeholder="Your Email" required="required" />
+	            </label>  
+	        </div>
+	        <div>		          
+	            <label for="message">
+	           	    <span class="required">Message: </span> 
+	           	    <textarea id="message" name="message" placeholder="Please write your message here." required="required"></textarea> 
+	           	</label>  
+	        </div>
+	        <div>		           
+	        	<button name="submit" type="submit" id="submit" >SEND</button> 
+	        </div>
+	    </form>
+	</div>
+
+    <script>
+        let subMenu= document.getElementById("subMenu");
+        function toggleMenu(){
+            subMenu.classList.toggle("open")
+        }
+
+		function toggleImage(image){
+		if (image.src.indexOf("imgs/menu-button.png") != -1){
+        image.src = "imgs/cross.png";
+    	}else {
+        image.src = "imgs/menu-button.png";
+    	}
+		}
+    </script>
+
+    </body>
+</html>

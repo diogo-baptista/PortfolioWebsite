@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Homepage</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+
+	<div class="image1">
+		<div>
+			<img src="imgs/menu-button.png" class="img-menu" onclick="toggleMenu(); toggleImage(this)">
+			<div class="z-index-overlap">
+				<ul class="dropdown-menu" id="subMenu">
+					<li class="menu-text"><a href="#cv">CV</a><hr class="menu-separator"> </li>
+					<li class="menu-text"><a href="#project">Projects</a><hr class="menu-separator"></li>
+					<li class="last-menu-elem menu-text"><a href="contactMe.html">Contact Me</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="text-box-middle">
+			<p>Hi, I'm Diogo Baptista. <br> Welcome to my Portfolio Website.</p>
+		</div>
+	</div>
+	
+	<div class="content">
+		<h3>About me</h3>
+		<p>
+			I'm a programmer from Portugal that currently lives in Lisbon. I've always loved tech and when I started programming in highschool I quickly realized that it was what I wanted to do for a living. 
+			This passion then led me to get a bachelor's degree in Informatics and Telecommunications Engineering at IST in Lisbon.
+		</p>
+		<p id="last-paragraph-content">
+			To tell you a little bit about my personality, I'm someone that is easy-going, friendly and open-minded. I am also communicative, proactive, hard-working and always looking to improve my skills.
+		</p>
+	</div>
+	
+	<div class="image2">
+		<ul id="portfolio-curriculum">
+			<li><a href="https://github.com/diogo-baptista" id="project">&#x2022; Projects</a></li>
+			<li><a href="cv/DiogoCV-Eng.pdf" download id="cv">&#x2022; CV</a></li>
+			<li><a href="contactMe.html" id="contact-me">&#x2022; Contact Me</a></li>
+		</ul>
+	</div>
+	
+	<div class="footer">
+		<h4>Contacts</h4>
+		<ul>
+			<li>Email: mab4.diogo@gmail.com</li>
+			<li>Location: Lisbon, Portugal</li>
+		</ul>
+	</div>
+
+<script>
+	let subMenu= document.getElementById("subMenu");	
+	
+	function toggleMenu(image){
+		subMenu.classList.toggle("open")
+	}
+
+	function toggleImage(image){
+		if (image.src.indexOf("imgs/menu-button.png") != -1){
+        image.src = "imgs/cross.png";
+    	}else {
+        image.src = "imgs/menu-button.png";
+    	}
+	}
+</script>
+
+</body>
+</html>
